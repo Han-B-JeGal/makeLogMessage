@@ -20,12 +20,12 @@ def connect(DB_TYPE: str = None):
 
     except Exception as Ex:
         if ExceptLog is None:
-            ExceptLog = lg.cOSLogger(_pPrefix='Exception', _pLevel='ERROR')
+            ExceptLog = osLogger.cOSLogger(_pPrefix='Exception', _pLevel='ERROR')
         ExceptLog.writeLog('[osDB:connect] ' + str(Ex))
         conn = None
         curs = None
 
-    finally
+    finally:
         return conn, curs
 
 # 연결 종료 함수
