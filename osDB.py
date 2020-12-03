@@ -75,7 +75,7 @@ def executeS(sql: str = None, args: dict = None):
         if connector is not None:
             connector.rollback()
         retVal = False
-    finally
+    finally:
         close(connector, cursor)
         return retVal
 
